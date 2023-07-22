@@ -4,16 +4,16 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: your_password
+      POSTGRES_PASSWORD: your_password #must be the same
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
   helloworld_project:
-    image: my_django_app:07
+    image: morf100s/helloworld_project
     environment:
       DB_NAME: 'postgres'
       DB_USER: 'postgres'
-      DB_PASSWORD: 'your_password'
+      DB_PASSWORD: 'your_password' #must be the same
       DB_HOST: 'db'
       DB_PORT: 5432
     volumes:
